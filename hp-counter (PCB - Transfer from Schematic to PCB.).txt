@@ -1,0 +1,16 @@
+Transfer from Schematic to PCB.
+-------------------------------
+
+Report Written:     Wednesday, November 18, 2020
+Design Path:        C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\hp-counter.pcb
+Design Title:       
+Created:            18/11/2020 21:34:24
+Last Saved:         18/11/2020 21:34:47
+Editing Time:       0 min
+Units:              mm (precision 3)
+
+Net class "Power" was not defined, but has been created. Please check the values in the PCB design.
+Net class "Ground" was not defined, but has been created. Please check the values in the PCB design.
+Net class "Signal" was not defined, but has been created. Please check the values in the PCB design.
+
+End Of Report.
