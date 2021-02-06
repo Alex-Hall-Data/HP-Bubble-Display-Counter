@@ -1,6 +1,8 @@
 #include <ShiftRegister74HC595.h>
 
 //control hp led with shift register
+//daisychain sn74hc595 registers and hookup as below and with Q4-7 of register 1 to cathode pins1-4 of display
+//Q0-7 of register 2 go to anodes a-f-dp of display
 
 
 int numberOfShiftRegisters = 2; // number of shift registers attached in series
@@ -19,6 +21,9 @@ byte digitArray[10]; //array of segment states
 byte selectArray[4]; //array of digit onoff states
 
 void setup() {
+
+  //GPIO 1 (TX) swap the pin to a GPIO.
+  pinMode(1, FUNCTION_3); 
 
   //set pins to output because they are addressed in the main loop
 
