@@ -23,12 +23,14 @@ def printShare(stock):
     
     
 def mainProgram():
-    stock = yf.Ticker(ticker)
-    data = stock.history()
-    last_quote = (data.tail(1)['Close'].iloc[0])
-    printShare(int(10 * round(last_quote,1)))
-    time.sleep(9.5)
-    mainProgram()
+    
+    while(1):
+        stock = yf.Ticker(ticker)
+        data = stock.history()
+        last_quote = (data.tail(1)['Close'].iloc[0])
+        printShare(int( round(last_quote)))
+        time.sleep(9.5)
+
     
 mainProgram()
 

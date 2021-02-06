@@ -68,7 +68,7 @@ void loop() {
     digit3 = (price/10)%10;
     digitalWrite(C3, LOW);
   }
-  displayDigit(digit3, true);
+  displayDigit(digit3, false);
   delay(DUTY_CYCLE);
   digitalWrite(C3, HIGH);
   delayMicroseconds(BLANKING_DELAY);
