@@ -212,14 +212,16 @@ void displayNumber(int num){
 
 
 
-
-
-
 void scrollDisplay(){
 
   int price = getData();
 
-  int len = numdigits(price);
+  unsigned long previousMillisScroll = 0;
+  unsigned long previousMillisPrice = 0;
+  int counter = 0;
+  while (true){
+
+      int len = numdigits(price);
   char buf[len+1];
   ltoa(price, buf, 10);
 
@@ -234,10 +236,6 @@ void scrollDisplay(){
     }
   }
 
-  unsigned long previousMillisScroll = 0;
-  unsigned long previousMillisPrice = 0;
-  int counter = 0;
-  while (true){
     int a = counter%(len+3);
     int b = (counter + 1)%(len+3);
     int c = (counter + 2)%(len+3);
