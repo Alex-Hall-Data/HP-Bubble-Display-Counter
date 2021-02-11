@@ -108,8 +108,9 @@ void loop(){
   //i++;
   
   //displayNumber(price); //to display a static number
-  scrollDisplay(price); //to scroll a number across the screen
+  scrollDisplay(); //to scroll a number across the screen
 
+/*
   unsigned long currentMillis = millis();
 
     if (currentMillis - previousMillis >= interval) {
@@ -118,6 +119,7 @@ void loop(){
     price = getData();
 
     }
+   */
   
 }
 
@@ -213,7 +215,9 @@ void displayNumber(int num){
 
 
 
-void scrollDisplay(int price){
+void scrollDisplay(){
+
+  int price = getData();
 
   int len = numdigits(price);
   char buf[len+1];
@@ -230,7 +234,8 @@ void scrollDisplay(int price){
     }
   }
 
-  unsigned long previousMillis = 0;
+  unsigned long previousMillisScroll = 0;
+  unsigned long previousMillisPrice = 0;
   int counter = 0;
   while (true){
     int a = counter%(len+3);
@@ -246,11 +251,19 @@ void scrollDisplay(int price){
 
     displayDigits(int_out1, int_out2, int_out3, int_out4);
 
-    unsigned long currentMillis = millis();
-    if (currentMillis - previousMillis >= SCROLL_INTERVAL) {
-      previousMillis = currentMillis;
+    unsigned long currentMillisScroll = millis();
+    if (currentMillisScroll - previousMillisScroll >= SCROLL_INTERVAL) {
+      previousMillisScroll = currentMillisScroll;
       counter++;
     }
+
+    unsigned long currentMillisPrice = millis();
+    if (currentMillisPrice - previousMillisPrice >= interval) {
+      previousMillisPrice = currentMillisPrice;
+      price=getData();
+    }
+
+    
   }
   
 }
