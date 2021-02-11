@@ -14,6 +14,7 @@ int dataPin = 2; //DS pin
 
 int DUTY_CYCLE = 1;
 int BLANKING_DELAY = 100;
+int SCROLL_INTERVAL = 250;
 
 ShiftRegister74HC595<2> sr(dataPin, clockPin, latchPin);
 
@@ -106,7 +107,8 @@ void loop(){
   //displayNumber(i);
   //i++;
   
-  displayNumber(price);
+  //displayNumber(price);
+  scrollDisplay(price);
 
   unsigned long currentMillis = millis();
 
@@ -208,6 +210,64 @@ void displayNumber(int num){
 
 
 
+
+
+
+void scrollDisplay(int price){
+
+  int len = numdigits(price);
+  char buf[len+1];
+  itoa(price, buf, 10);
+
+  unsigned long previousMillis = 0;
+  int counter = 0;
+  while (true){
+    int a = counter%len;
+    int b = (counter + 1)%len;
+    int c = (counter + 2)%len;
+    int d = (counter + 3)%len;
+
+    char char_in[4]; 
+    int int_out;
+    
+    char_in[0] = buf[a];
+    char_in[1] = buf[b];  
+    char_in[2] = buf[c];  
+    char_in[3] = buf[d];
+
+    int_out = atoi(char_in);
+
+    displayNumber(int_out);
+
+    unsigned long currentMillis = millis();
+    if (currentMillis - previousMillis >= SCROLL_INTERVAL) {
+      previousMillis = currentMillis;
+      counter++;
+    }
+  }
+  
+}
+
+
+
+
+
+
+int numdigits(long i)
+{
+       int digits;
+
+       i = abs(i);
+       if (i < 10)
+         digits = 1;
+       else
+         digits = (int)(log10((double)i)) + 1;
+       return digits;
+}
+
+
+
+// currently largely stolen from https://github.com/openhardwarelabs/bitcoin-ticker/blob/master/bitcoin_ticker/bitcoin_ticker.ino
 int getData(){
 
 
