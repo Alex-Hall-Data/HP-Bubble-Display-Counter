@@ -14,7 +14,7 @@ int dataPin = 2; //DS pin
 
 int DUTY_CYCLE = 1;
 int BLANKING_DELAY = 100;
-int SCROLL_INTERVAL = 250;
+int SCROLL_INTERVAL = 500;
 
 ShiftRegister74HC595<2> sr(dataPin, clockPin, latchPin);
 
@@ -107,8 +107,8 @@ void loop(){
   //displayNumber(i);
   //i++;
   
-  //displayNumber(price);
-  scrollDisplay(price);
+  //displayNumber(price); //to display a static number
+  scrollDisplay(price); //to scroll a number across the screen
 
   unsigned long currentMillis = millis();
 
@@ -217,27 +217,34 @@ void scrollDisplay(int price){
 
   int len = numdigits(price);
   char buf[len+1];
-  itoa(price, buf, 10);
+  ltoa(price, buf, 10);
+
+  //new character array with 3 blanking spaces at end
+  char buf2[len+3];
+  for(int i=0;i<len+3;i++){
+    if(i<len){
+      buf2[i]=buf[i];
+    }
+    else{
+      buf2[i]='X';//blanking at end of number
+    }
+  }
 
   unsigned long previousMillis = 0;
   int counter = 0;
   while (true){
-    int a = counter%len;
-    int b = (counter + 1)%len;
-    int c = (counter + 2)%len;
-    int d = (counter + 3)%len;
+    int a = counter%(len+3);
+    int b = (counter + 1)%(len+3);
+    int c = (counter + 2)%(len+3);
+    int d = (counter + 3)%(len+3);
 
-    char char_in[4]; 
-    int int_out;
-    
-    char_in[0] = buf[a];
-    char_in[1] = buf[b];  
-    char_in[2] = buf[c];  
-    char_in[3] = buf[d];
+    //48 seems to be from ascii conversion. I really hate C++
+    int int_out1 = buf2[a]+0-48;
+    int int_out2 = buf2[b]+0-48;
+    int int_out3 = buf2[c]+0-48;
+    int int_out4 = buf2[d]+0-48;
 
-    int_out = atoi(char_in);
-
-    displayNumber(int_out);
+    displayDigits(int_out1, int_out2, int_out3, int_out4);
 
     unsigned long currentMillis = millis();
     if (currentMillis - previousMillis >= SCROLL_INTERVAL) {
@@ -250,7 +257,84 @@ void scrollDisplay(int price){
 
 
 
+void displayDigits(int digit1, int digit2, int digit3, int digit4){
 
+
+  uint8_t srData[2];
+
+  if(digit1 < 10){
+    srData[0] = selectArray[0];
+    srData[1] = digitArray[digit1];
+  }
+  else{
+    srData[0] = 0b11111111;
+    srData[1] = 0b00000000;
+  }
+  sr.setAll(srData);
+
+  delay(DUTY_CYCLE);
+  srData[0] = 0b11111111;
+  srData[1] = 0b00000000;
+  sr.setAll(srData);
+  delayMicroseconds(BLANKING_DELAY);
+
+
+  if(digit2 < 10){
+    srData[0] = selectArray[1];
+    srData[1] = digitArray[digit2];
+  }
+  else{
+    srData[0] = 0b11111111;
+    srData[1] = 0b00000000;
+  }
+  sr.setAll(srData);
+
+  delay(DUTY_CYCLE);
+  srData[0] = 0b11111111;
+  srData[1] = 0b00000000;
+  sr.setAll(srData);
+  delayMicroseconds(BLANKING_DELAY);
+
+
+
+  if(digit3 < 10){
+    srData[0] = selectArray[2];
+    srData[1] = digitArray[digit3];
+
+  }
+  else{
+   srData[0] = 0b11111111;
+   srData[1] = 0b00000000;
+  }
+  sr.setAll(srData);
+
+  delay(DUTY_CYCLE);
+  srData[0] = 0b11111111;
+  srData[1] = 0b00000000;
+  sr.setAll(srData);
+  delayMicroseconds(BLANKING_DELAY);
+
+
+
+  if(digit4 < 10){
+    srData[0] = selectArray[3];
+    srData[1] = digitArray[digit4];
+
+  }
+  else{
+    srData[0] = 0b11111111;
+    srData[1] = 0b00000000;
+  }
+  sr.setAll(srData);
+
+  delay(DUTY_CYCLE);
+  srData[0] = 0b11111111;
+  srData[1] = 0b00000000;
+  sr.setAll(srData);
+  delayMicroseconds(BLANKING_DELAY);
+
+  
+}
 
 
 int numdigits(long i)

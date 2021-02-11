@@ -2,6 +2,8 @@
 #include <stdlib.h> 
 
 
+int SCROLL_INTERVAL=250;
+
 void setup() {
     Serial.begin(9600);
     Serial.println("test");
@@ -9,37 +11,56 @@ void setup() {
 }
 
 void loop() {
-  
-  scrollNumber(12345);
+
+  long pr = 12345;
+  scrollNumber(pr);
 
 }
 
-void scrollNumber(long price){
+void scrollNumber(int price){
 
   int len = numdigits(price);
   char buf[len+1];
-  itoa(price, buf, 10);
+  ltoa(price, buf, 10);
 
+  //new character array with blanking spaces at end
+  char buf2[len+1];
+  for(int i=0;i<len+1;i++){
+    if(i<len){
+      buf2[i]=buf[i];
+    }
+    else{
+      buf2[i]='X';//blanking at end of number
+    }
+  }
+
+  unsigned long previousMillis = 0;
   int counter = 0;
   while (true){
     int a = counter%len;
-    int b = (counter + 1)%len;
-    int c = (counter + 2)%len;
-    int d = (counter + 3)%len;
+    int b = (counter + 1)%(len+1);
+    int c = (counter + 2)%(len+1);
+    int d = (counter + 3)%(len+1);
 
-    char char_in[4]; 
-    int int_out;
+    //48 seems to be from ascii conversion. I really hate C++
+    int int_out1 = buf2[a]+0-48;
+    int int_out2 = buf2[b]+0-48;
+    int int_out3 = buf2[c]+0-48;
+    int int_out4 = buf2[d]+0-48;
+
     
-    char_in[0] = buf[a];
-    char_in[1] = buf[b];  
-    char_in[2] = buf[c];  
-    char_in[3] = buf[d];
 
-    int_out = atoi(char_in);
 
-    Serial.println(int_out);
-
-    counter++;
+    unsigned long currentMillis = millis();
+    if (currentMillis - previousMillis >= SCROLL_INTERVAL) {
+      previousMillis = currentMillis;
+    Serial.println(int_out1);
+    Serial.println(int_out2);
+    Serial.println(int_out3);
+    Serial.println(int_out4);
+    Serial.println();
+      counter++;
+    }
   }
   
 }
