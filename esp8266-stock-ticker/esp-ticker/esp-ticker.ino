@@ -106,11 +106,11 @@ void loop(){
 
   //displayNumber(i);
   //i++;
-  
-  //displayNumber(price); //to display a static number
-  scrollDisplay(); //to scroll a number across the screen
 
-/*
+  //to display a static number
+  /*
+  displayNumber(price); 
+  
   unsigned long currentMillis = millis();
 
     if (currentMillis - previousMillis >= interval) {
@@ -120,6 +120,12 @@ void loop(){
 
     }
    */
+  
+  
+  //to scroll a number across the screen
+  scrollDisplay(); 
+
+
   
 }
 
@@ -221,7 +227,7 @@ void scrollDisplay(){
   int counter = 0;
   while (true){
 
-      int len = numdigits(price);
+  int len = numdigits(price);
   char buf[len+1];
   ltoa(price, buf, 10);
 
@@ -241,13 +247,28 @@ void scrollDisplay(){
     int c = (counter + 2)%(len+3);
     int d = (counter + 3)%(len+3);
 
+    //determine position of dp
+    int dp = NULL;
+    if(a==len+3-6){
+      dp = 1;      
+    }
+    else if(b==len+3-6){
+      dp=2;
+    }
+    else if(c==len+3-6){
+      dp=3;
+    }
+    else if(d==len+3-6){
+      dp=4;
+    }
+
     //48 seems to be from ascii conversion. I really hate C++
     int int_out1 = buf2[a]+0-48;
     int int_out2 = buf2[b]+0-48;
     int int_out3 = buf2[c]+0-48;
     int int_out4 = buf2[d]+0-48;
 
-    displayDigits(int_out1, int_out2, int_out3, int_out4);
+    displayDigits(int_out1, int_out2, int_out3, int_out4, dp);
 
     unsigned long currentMillisScroll = millis();
     if (currentMillisScroll - previousMillisScroll >= SCROLL_INTERVAL) {
@@ -268,7 +289,7 @@ void scrollDisplay(){
 
 
 
-void displayDigits(int digit1, int digit2, int digit3, int digit4){
+void displayDigits(int digit1, int digit2, int digit3, int digit4, int dp){
 
 
   uint8_t srData[2];
@@ -276,6 +297,10 @@ void displayDigits(int digit1, int digit2, int digit3, int digit4){
   if(digit1 < 10){
     srData[0] = selectArray[0];
     srData[1] = digitArray[digit1];
+    //add decimal point if needed
+    if(dp==1){
+      srData[1] = srData[1] + 0x80;
+    }
   }
   else{
     srData[0] = 0b11111111;
@@ -293,6 +318,10 @@ void displayDigits(int digit1, int digit2, int digit3, int digit4){
   if(digit2 < 10){
     srData[0] = selectArray[1];
     srData[1] = digitArray[digit2];
+        //add decimal point if needed
+    if(dp==2){
+      srData[1] = srData[1] + 0x80;
+    }
   }
   else{
     srData[0] = 0b11111111;
@@ -311,6 +340,10 @@ void displayDigits(int digit1, int digit2, int digit3, int digit4){
   if(digit3 < 10){
     srData[0] = selectArray[2];
     srData[1] = digitArray[digit3];
+        //add decimal point if needed
+    if(dp==3){
+      srData[1] = srData[1] + 0x80;
+    }
 
   }
   else{
@@ -330,6 +363,10 @@ void displayDigits(int digit1, int digit2, int digit3, int digit4){
   if(digit4 < 10){
     srData[0] = selectArray[3];
     srData[1] = digitArray[digit4];
+        //add decimal point if needed
+    if(dp==4){
+      srData[1] = srData[1] + 0x80;
+    }
 
   }
   else{
@@ -363,6 +400,7 @@ int numdigits(long i)
 
 
 // currently largely stolen from https://github.com/openhardwarelabs/bitcoin-ticker/blob/master/bitcoin_ticker/bitcoin_ticker.ino
+//returns price *100 (to allow for 2dp)
 int getData(){
 
 
@@ -429,6 +467,7 @@ int getData(){
   String priceString = jsonAnswer.substring(rateIndex + 12, rateIndex + 18);
   priceString.trim();
   float price = priceString.toFloat();
+  price = price*100;
 
   // Print price
   //Serial.println();
