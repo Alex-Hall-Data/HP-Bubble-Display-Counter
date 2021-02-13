@@ -1,0 +1,25 @@
+Forward Design Changes Report
+-----------------------------
+
+Report Written:     Saturday, February 13, 2021
+Project Path:       C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.prj
+Design Path:        C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.pcb
+Design Title:       
+Created:            13/02/2021 21:43:20
+Last Saved:         13/02/2021 21:53:50
+Editing Time:       22 min
+Units:              thou (precision 0)
+
+Changed component reference "IC3" from component "74HC595N", package "DIP762W53P254L1902H420Q16N" to component "MC74HC595ADG", package "SOIC127P600X175-16N".
+Changed component reference "IC4" from component "74HC595N", package "DIP762W53P254L1902H420Q16N" to component "MC74HC595ADG", package "SOIC127P600X175-16N".
+Changed component reference "R1" from component "CFR16J100R", package "RESAD1090W50L350D185" to component "CRCW1206100RFKEB", package "RESC3216X60N".
+Changed component reference "R2" from component "CFR16J100R", package "RESAD1090W50L350D185" to component "CRCW1206100RFKEB", package "RESC3216X60N".
+Changed component reference "R3" from component "CFR16J100R", package "RESAD1090W50L350D185" to component "CRCW1206100RFKEB", package "RESC3216X60N".
+Changed component reference "R4" from component "CFR16J100R", package "RESAD1090W50L350D185" to component "CRCW1206100RFKEB", package "RESC3216X60N".
+Changed component reference "R5" from component "CFR16J100R", package "RESAD1090W50L350D185" to component "CRCW1206100RFKEB", package "RESC3216X60N".
+Changed component reference "R6" from component "CFR16J100R", package "RESAD1090W50L350D185" to component "CRCW1206100RFKEB", package "RESC3216X60N".
+Changed component reference "R7" from component "CFR16J100R", package "RESAD1090W50L350D185" to component "CRCW1206100RFKEB", package "RESC3216X60N".
+Changed component reference "R8" from component "CFR16J100R", package "RESAD1090W50L350D185" to component "CRCW1206100RFKEB", package "RESC3216X60N".
+
+
+End Of Report.

@@ -1,0 +1,18 @@
+Schematic and PCB Check Report
+------------------------------
+
+Report Written:     Saturday, February 13, 2021
+Project Path:       C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.prj
+Design Path:        C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.pcb
+Design Title:       
+Created:            13/02/2021 21:43:20
+Last Saved:         13/02/2021 21:53:50
+Editing Time:       22 min
+Units:              thou (precision 0)
+
+
+Checking integrity of Schematic "C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker-schematic.sch" with PCB "C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.pcb"
+====================================================================================================================================================================================================================================================================================
+
+
+End Of Report.

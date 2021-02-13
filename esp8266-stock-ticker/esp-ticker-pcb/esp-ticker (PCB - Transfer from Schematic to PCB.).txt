@@ -1,0 +1,16 @@
+Transfer from Schematic to PCB.
+-------------------------------
+
+Report Written:     Saturday, February 13, 2021
+Design Path:        C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.pcb
+Design Title:       
+Created:            13/02/2021 21:43:20
+Last Saved:         13/02/2021 21:43:46
+Editing Time:       0 min
+Units:              thou (precision 0)
+
+Net class "Signal" was not defined, but has been created. Please check the values in the PCB design.
+Net class "Power" was not defined, but has been created. Please check the values in the PCB design.
+Net class "Ground" was not defined, but has been created. Please check the values in the PCB design.
+
+End Of Report.
