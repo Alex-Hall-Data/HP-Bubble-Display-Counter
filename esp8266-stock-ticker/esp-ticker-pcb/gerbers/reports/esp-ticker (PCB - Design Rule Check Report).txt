@@ -1,0 +1,74 @@
+Design Rule Check Report
+------------------------
+
+Report Written:     Monday, February 15, 2021
+Project Path:       C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.prj
+Design Path:        C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.pcb
+Design Title:       
+Created:            13/02/2021 21:43:20
+Last Saved:         15/02/2021 10:41:02
+Editing Time:       2221 min
+Units:              thou (precision 0)
+
+
+Results
+=======
+
+Pad to Pad Error (P-P) between (9718 10183) and (9726 10183) on Layer "[Top]".
+    Error between Component Pad J1.1 (Net 'N0009') and Component Pad J1.2, Gap is 8 needs to be 10.
+Pad to Pad Error (P-P) between (9743 10183) and (9751 10183) on Layer "[Top]".
+    Error between Component Pad J1.2 and Component Pad J1.3, Gap is 8 needs to be 10.
+Pad to Pad Error (P-P) between (9769 10183) and (9777 10183) on Layer "[Top]".
+    Error between Component Pad J1.3 and Component Pad J1.4, Gap is 8 needs to be 10.
+Pad to Pad Error (P-P) between (9794 10183) and (9802 10183) on Layer "[Top]".
+    Error between Component Pad J1.4 and Component Pad J1.5 (Net 'GND'), Gap is 8 needs to be 10.
+
+Number of errors found : 4
+
+
+Settings
+========
+
+
+Spacings
+
+=========
+
+Tracks        Yes
+Pads and Vias Yes
+Shapes        No
+Text          No
+Board         Yes
+Drills        Yes
+Components    No
+
+
+Manufacturing
+
+==============
+
+Drill Breakout                  No
+Drill Backoff                   No
+Silkscreen Overlap              No
+Copper Text In Board            No
+Min Track Width                 Yes
+Min Annular Ring                Yes
+Min Paste Size                  No
+Vias In Pads                    No
+Unplated Vias                   No
+Unplated Pads With Inner Tracks No
+
+
+Nets
+
+=====
+
+Net Completion               Yes
+Dangling Tracks              Yes
+Net Track Length Differences No
+Nets without Components      No
+Nets on No Connect pins      No
+
+
+
+End Of Report.

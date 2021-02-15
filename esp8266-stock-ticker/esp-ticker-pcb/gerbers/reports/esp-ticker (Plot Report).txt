@@ -1,0 +1,246 @@
+Plot Report
+-----------
+
+Report Written:     Monday, February 15, 2021
+Project Path:       C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.prj
+Design Path:        C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker.pcb
+Design Title:       
+Created:            13/02/2021 21:43:20
+Last Saved:         15/02/2021 10:41:02
+Editing Time:       2223 min
+Units:              thou (precision 0)
+
+
+Device Settings
+===============
+
+
+Gerber Settings
+===============
+
+    Leading zero suppression.
+    G01 assumed throughout.
+    Line termination <*> <CR> <LF>.
+    3.5 format absolute inches.
+    Format commands defined in Gerber file.
+    Aperture table defined in Gerber file.
+    Hardware arcs allowed.
+
+
+Drill Settings
+==============
+
+    Excellon Format 2
+    Format 3.5 absolute in inches.
+    Zero suppression Leading
+
+
+
+Plots Output
+============
+
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Top Copper.gbr
+
+    Layers:
+    --------------
+    Top Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D12    Round 60.00
+    D89    Round 10.00
+    D90    Round 25.00
+    D91    Round 40.00
+    D92    Square 65.55
+    D93    Round 65.55
+    D94    Square 75.00
+    D95    Round 75.00
+    D96    Rectangle 41.34 X 70.87
+    D97    Rectangle 17.72 X 43.31
+    D98    Round 95.39
+    D99    Round 112.05
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Top Copper (Resist).gbr
+
+    Layers:
+    --------------
+    Top Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D17    Round 70.00
+    D100   Square 75.55
+    D101   Round 75.55
+    D102   Square 85.00
+    D103   Round 85.00
+    D104   Rectangle 51.34 X 80.87
+    D105   Rectangle 27.72 X 53.31
+    D106   Round 105.39
+    D107   Round 122.05
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Top Copper (Paste).gbr
+
+    Layers:
+    --------------
+    Top Copper
+
+    D-Code Shape  (thou)
+    ---------------------------------
+    D108   Rectangle 37.34 X 66.87
+    D109   Rectangle 13.72 X 39.31
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Top Silkscreen.gbr
+
+    Layers:
+    ------------------
+    Top Silkscreen
+
+    D-Code Shape  (thou)
+    -----------------------
+    D10    Round 7.87
+    D23    Round 5.00
+    D24    Round 3.94
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Documentation.gbr
+
+    Layers:
+    -----------------
+    Documentation
+
+    D-Code Shape  (thou)
+    -----------------------
+    D24    Round 3.94
+    D25    Round 1.97
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Bottom Copper.gbr
+
+    Layers:
+    -----------------
+    Bottom Copper
+
+    D-Code Shape  (thou)
+    ----------------------------------------------
+    D12    Round 60.00
+    D89    Round 10.00
+    D90    Round 25.00
+    D91    Round 40.00
+    D92    Square 65.55
+    D93    Round 65.55
+    D94    Square 75.00
+    D95    Round 75.00
+    D96    Rectangle 41.34 X 70.87
+    D98    Round 95.39
+    D99    Round 112.05
+    D110   Rectangle 25.59 X 61.02
+    D111   Rectangle 41.34 X 70.87  Rotation 90
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Bottom Copper (Resist).gbr
+
+    Layers:
+    -----------------
+    Bottom Copper
+
+    D-Code Shape  (thou)
+    ----------------------------------------------
+    D17    Round 70.00
+    D100   Square 75.55
+    D101   Round 75.55
+    D102   Square 85.00
+    D103   Round 85.00
+    D104   Rectangle 51.34 X 80.87
+    D106   Round 105.39
+    D107   Round 122.05
+    D112   Rectangle 35.59 X 71.02
+    D113   Rectangle 51.34 X 80.87  Rotation 90
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Bottom Copper (Paste).gbr
+
+    Layers:
+    -----------------
+    Bottom Copper
+
+    D-Code Shape  (thou)
+    ----------------------------------------------
+    D108   Rectangle 37.34 X 66.87
+    D114   Rectangle 21.59 X 57.02
+    D115   Rectangle 37.34 X 66.87  Rotation 90
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Bottom Silkscreen.gbr
+
+    Layers:
+    ---------------------
+    Bottom Silkscreen
+
+    D-Code Shape  (thou)
+    -----------------------
+    D10    Round 7.87
+    D24    Round 3.94
+
+NC Drill Output
+===============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Drill Data - [Through Hole].drl
+
+    Output:
+    -----------------------------
+    Plated Round Drill Holes
+    Unplated Round Drill Holes
+    Plated Slots
+    Unplated Slots
+
+    Tool  Size           Count   ID
+    --------------------------------------
+    T001  0.01200 inches 33    E
+    T002  0.02400 inches 2     F
+    T003  0.03000 inches 12    B
+    T004  0.04370 inches 8     G
+    T005  0.05000 inches 3     H
+    T006  0.06360 inches 2     I
+    T007  0.07470 inches 2     J
+    --------------------------------------
+    Total                62
+    --------------------------------------
+
+
+Gerber Output
+=============
+
+C:\Users\Alex\Documents\personal-projects\HP-bubble-counter\esp8266-stock-ticker\esp-ticker-pcb\esp-ticker - Outline.gbr
+
+    Layers:
+    ------------------
+    Board Outlines
+
+    D-Code Shape  (thou)
+    -----------------------
+    D88    Round 12.00
+
+End Of Report.
