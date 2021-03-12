@@ -9,7 +9,7 @@ int C3 = 10;
 int C4 = 11;
 
 void setup() {
-  DDRD = B11111111;  // set port D as output
+  DDRA = B11111111;  // set port D as output
   pinMode(C1, OUTPUT);
   pinMode(C2, OUTPUT);
   pinMode(C3, OUTPUT);
@@ -85,36 +85,36 @@ void loop() {
 void displayDigit(int value){
 
   if(value==0){
-    PORTD = B00111111;
+    PORTA = B00111111;
   }
   else if(value ==1){
-    PORTD = B00000110;
+    PORTA = B00000110;
   }
     else if(value ==2){
-    PORTD = B01011011;
+    PORTA = B01011011;
   }
     else if(value ==3){
-    PORTD = B01001111;
+    PORTA = B01001111;
   }
     else if(value ==4){
-    PORTD = B01100110;
+    PORTA = B01100110;
   }
     else if(value ==5){
-    PORTD = B01101101;
+    PORTA = B01101101;
   }
     else if(value ==6){
-    PORTD = B01111101;
+    PORTA = B01111101;
   }
     else if(value ==7){
-    PORTD = B00000111;
+    PORTA = B00000111;
   }
       else if(value ==8){
-    PORTD = B01111111;
+    PORTA = B01111111;
   }
       else if(value ==9){
-    PORTD = B01101111;
+    PORTA = B01101111;
   }
   else{
-    PORTD=B00000000;
+    PORTA=B00000000;
   }
 }

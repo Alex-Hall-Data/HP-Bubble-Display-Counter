@@ -27,6 +27,10 @@ byte selectArray[4]; //array of digit onoff states
 #define CD_API "/v1/bpi/currentprice.json"
 #define CD_URL "api.coindesk.com"
 
+//#define CD_API "/stable/stock/FSR/quote?token=pk_82f7c042984d42b7b48fbdb5b66ab858&"
+//#define CD_URL "https://cloud.iexapis.com/"
+
+
 WiFiClient client;
 
 int price;
@@ -462,6 +466,18 @@ int getData(){
   //Serial.println(jsonAnswer);
   jsonAnswer.trim();
 
+
+/*
+  StaticJsonBuffer<2000> jsonBuffer;
+  JsonObject& root = jsonBuffer.parseObject(jsonAnswer);
+  double price = root["iexRealtimePrice"];
+   price = price*100;
+  int out = round(price);
+  return out;
+  */
+ 
+
+
   // Get rate as float
   int rateIndex = jsonAnswer.indexOf("rate_float");
   String priceString = jsonAnswer.substring(rateIndex + 12, rateIndex + 18);
@@ -476,6 +492,9 @@ int getData(){
   int out = round(price);
   //Serial.println(out);
   return out;
+
+  
+  
 
   
 }
